@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+second commit 2️⃣
+=======
+just second commit👍🏻
+>>>>>>> studentname

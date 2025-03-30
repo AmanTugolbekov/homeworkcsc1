@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Коммит</title>
+    <style>
+        body {
+            background: black;
+            color: white;
+            font-family: sans-serif;
+            text-align: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 50px;
+            margin-top: 40vh;
+        }
+        .c {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: red;
+            border-radius: 50%;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            from { transform: translateY(-10px); }
+            to { transform: translateY(100vh); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Последний коммит ура!</h1>
+    <script>
+        function makeC() {
+            for (let i = 0; i < 50; i++) {
+                let c = document.createElement('div');
+                c.className = 'c';
+                document.body.appendChild(c);
+                let s = Math.random() * 15 + 5;
+                let l = Math.random() * window.innerWidth;
+                let d = Math.random() * 3 + 2;
+                c.style.background = ['red','yellow','blue','green','pink'][Math.floor(Math.random()*5)];
+                c.style.left = l + 'px';
+                c.style.top = '-10px';
+                c.style.width = s + 'px';
+                c.style.height = s + 'px';
+                c.style.animationDuration = d + 's';
+                setTimeout(() => c.remove(), d * 1000);
+            }
+        }
+        setInterval(makeC, 700);
+    </script>
+</body>
+</html>
